@@ -1,0 +1,37 @@
+class Ecologist:
+    def __init__(self):
+        self.animal_counts = {}
+
+    def add_sighting(self, animal_species):
+        if animal_species in self.animal_counts:
+            self.animal_counts[animal_species] += 1
+        else:
+            self.animal_counts[animal_species] = 1
+
+    def total_species_count(self):
+        return len(self.animal_counts)
+
+    def generate_report(self):
+        print("Екологічний звіт:")
+        print("-----------------")
+        print("Загальна кількість видів тварин:", self.total_species_count())
+        print("Види тварин та їх кількість:")
+        for species, count in self.animal_counts.items():
+            print(f"{species}: {count}")
+
+
+# Приклад використання програми
+if __name__ == "__main__":
+    ecologist = Ecologist()
+
+    # Додавання нових даних про зустрічі тварин
+    ecologist.add_sighting("Олень")
+    ecologist.add_sighting("Олень")
+    ecologist.add_sighting("Лисиця")
+    ecologist.add_sighting("Ведмідь")
+    ecologist.add_sighting("Олень")
+    ecologist.add_sighting("Лисиця")
+    ecologist.add_sighting("Заєць")
+
+    # Генерація звіту
+    ecologist.generate_report()
