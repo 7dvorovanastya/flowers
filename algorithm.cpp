@@ -1,1 +1,1 @@
-<li>Service 2</li>
+Finally, here's a simple JavaScript function to check if a number is even:
